@@ -1,5 +1,6 @@
 package com.test.getcallhist;
-
+// inserted test comment from Windowz GUI
+// inserted ANOTHER COMMENT
 import java.sql.Date;
 
 import android.app.Activity;
