@@ -27,11 +27,11 @@ public class MainActivity extends Activity {
 		 	We assign the read values to variables
 		 */
 		StringBuffer sb = new StringBuffer();// What will be eventually printed to the TextView
-		/*Cursor cur = managedQuery(CallLog.Calls.CONTENT_URI,null,null,null,null);
+		Cursor cur = managedQuery(CallLog.Calls.CONTENT_URI,null,null,null,null);
 		int number = cur.getColumnIndex(CallLog.Calls.NUMBER);
 		int date = cur.getColumnIndex(CallLog.Calls.DATE);
 		int type = cur.getColumnIndex(CallLog.Calls.TYPE);
-		int name = cur.getColumnIndex(CallLog.Calls.CACHED_NAME);*/
+		int name = cur.getColumnIndex(CallLog.Calls.CACHED_NAME);
 		
 		sb.append("We will load this into an Array and use it with another array to assign sounds!");
 		
@@ -40,18 +40,18 @@ public class MainActivity extends Activity {
 		   to load the values into our array
 		 */
 		int count = 0;
-		while (/*cur.moveToNext() &&*/ count > 5){
-			/*String phoneNumber = cur.getString(number);
+		while (cur.moveToNext() && count < 5){
+			String phoneNumber = cur.getString(number);
 			Date callDate = new Date(Long.valueOf(cur.getString(date)));
 			String callType = cur.getString(type);
-			String callerName = cur.getString(name);*/
+			String callerName = cur.getString(name);
 			
 			/*  Here we create conditions based on call
 			 	type, such as ignoring outgoing calls 
 			 	or assigning special noises for missed
 			 	calls
 			 */
-			/*String dir = null;
+			String dir = null;
 			int dircode = Integer.parseInt(callType);
 			
 			switch(dircode){
@@ -64,14 +64,14 @@ public class MainActivity extends Activity {
 			case CallLog.Calls.MISSED_TYPE:
 				dir = "Missed";
 				break;
-			}*/
+			}
 			
-			//sb.append("\nName: " + callerName + "\n#: " + phoneNumber + "\nDate: " + callDate + "\nType: " + dir);
+			sb.append("\nName: " + callerName + "\n#: " + phoneNumber + "\nDate: " + callDate + "\nType: " + dir);
 			sb.append("\n_____________");
 			count++;
 		}
 		
-		//cur.close();// We always have to close a cursor
+		cur.close();// We always have to close a cursor
 		tv.setText(sb);//Don't forget to update the TextView!
 	}
 
