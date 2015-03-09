@@ -5,7 +5,7 @@ For the mobile app development class' group project.
 
 **Platform**: Android
 
-**Liscense**: New BSD
+**Liscense**: GNU GPL v2.0
 
 ##Project Description
 
